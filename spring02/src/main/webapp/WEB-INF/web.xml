@@ -6,7 +6,7 @@
   	<servlet-name>spring02</servlet-name>
   	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
   	<init-param>
-  		<param-name>contextCinfigLocation</param-name>
+  		<param-name>contextConfigLocation</param-name>
   		<param-value>/WEB-INF/spring/spring02-servlet.xml</param-value>
   	</init-param>
   </servlet>
