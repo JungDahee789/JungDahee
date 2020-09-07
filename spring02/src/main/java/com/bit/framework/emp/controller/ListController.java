@@ -14,12 +14,15 @@ public class ListController implements Controller {
 	public void setDao(EmpDao dao) {
 		this.dao = dao;
 	}
-
+	
 	@Override
-	public ModelAndView handleRequest(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-		ModelAndView mav=new ModelAndView();
-		mav.addObject("alist", dao.selectAll());
-		mav.setViewName("emp/list");
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		
+		mav.addObject("alist",dao.selectAll());
+		mav.setViewName("emp/list");//prefix와 suffix 사이에 있는 거 적기
+		
+		
 		return mav;
 	}
 

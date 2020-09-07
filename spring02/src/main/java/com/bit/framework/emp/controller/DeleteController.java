@@ -8,7 +8,7 @@ import org.springframework.web.servlet.mvc.Controller;
 
 import com.bit.framework.emp.model.EmpDao;
 
-public class AddController implements Controller{
+public class DeleteController implements Controller {
 	EmpDao dao;
 	
 	public void setDao(EmpDao dao) {
@@ -17,19 +17,10 @@ public class AddController implements Controller{
 	
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
+		dao.deleteOne(Integer.parseInt(request.getParameter("idx")));
 		ModelAndView mav = new ModelAndView();
-		if("GET".equals(request.getMethod())) {
-			mav.setViewName("emp/add");			
-		}else {
-			String name=request.getParameter("name");
-			String sub = request.getParameter("sub");
-			int pay=Integer.parseInt(request.getParameter("pay"));
-			dao.insertOne(name,sub,pay);
-			mav.setViewName("redirect:list.bit");
-		}
+		mav.setViewName("redirect:list.bit");
 		return mav;
 	}
-	
-	
+
 }

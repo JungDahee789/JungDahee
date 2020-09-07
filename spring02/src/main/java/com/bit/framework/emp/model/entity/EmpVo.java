@@ -11,6 +11,11 @@ public class EmpVo {
 	public EmpVo() {
 	}
 
+	@Override
+	public String toString() {
+		return "EmpVo [sabun=" + sabun + ", name=" + name + ", sub=" + sub + ", nalja=" + nalja + ", pay=" + pay + "]";
+	}
+
 	public EmpVo(int sabun, String name, String sub, Timestamp nalja, int pay) {
 		super();
 		this.sabun = sabun;
@@ -59,10 +64,4 @@ public class EmpVo {
 	public void setPay(int pay) {
 		this.pay = pay;
 	}
-
-	@Override
-	public String toString() {
-		return "EmpVo [sabun=" + sabun + ", name=" + name + ", sub=" + sub + ", nalja=" + nalja + ", pay=" + pay + "]";
-	}
-	
 }
