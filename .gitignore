@@ -1,0 +1,7 @@
+/.metadata/
+Servers/
+*.classpath
+/.settings/
+spring02/.settings/
+target/
+*.project
